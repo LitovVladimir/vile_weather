@@ -1,0 +1,16 @@
+div
+  table
+    thead
+      tr
+        th Название
+        th Долгота
+        th Широта
+        th
+    - locations.each do |location|
+      tr
+        td
+          = location.title
+        td
+          = location.latitude
+        td
+          = location.latitude
