@@ -10,10 +10,21 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 gem 'pg'
 
 # Assets and etc.
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 4.2.2'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+
+# MarkUps & Gallery
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-datepicker-rails'
+gem 'rails-jquery-autocomplete', '~> 1.0.5'
+gem 'select2-rails'
+gem 'simple_form'
+gem 'slim'
+gem 'will_paginate-bootstrap4'
 
 # Servers
 gem 'puma', '~> 3.11'

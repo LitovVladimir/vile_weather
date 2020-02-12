@@ -1,5 +1,5 @@
 div
-  table
+  table.table.table-striped
     thead
       tr
         th Название
@@ -13,4 +13,6 @@ div
         td
           = location.latitude
         td
-          = location.latitude
+          = location.longitude
+        td
+          = link_to 'Выгрузить', , class: 'btn btn-info'
