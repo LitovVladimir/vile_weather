@@ -32,6 +32,9 @@ gem 'puma', '~> 3.11'
 # Build JSON APIs
 gem 'jbuilder', '~> 2.5'
 
+# Domain logic support
+gem 'active_interaction', '~> 3.7'
+
 # Environment settings management
 gem 'figaro'
 
