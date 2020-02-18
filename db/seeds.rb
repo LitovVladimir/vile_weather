@@ -1,7 +1,2 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+locations = [[57.188776,39.506137],[53.35194,38.34964],[53.31907,38.36936],[52.89181,41.49565],[52.8761,41.46761],[52.88033,41.44691],[53.29885,38.24554],[48.21739,41.7238],[45.68795,40.27725],[52.7861,39.02275],[51.707006,43.61401],[44.853207,41.275458],[50.27969,39.44],[45.542951,41.474292],[50.64392,40.94518],[51.11784,40.72211],[50.015228,39.849458],[45.4541,41.66852],[45.4187,41.73088],[51.11784,40.72211],[50.66537,39.44288],[51.161584,41.166826],[45.45417,41.6625],[49.69431,39.86048],[45.37301,41.71028],[51.18116,40.9939],[44.6752,41.37938],[44.772372,41.63673],[44.458221,41.609108],[51.855684,38.989403],[52.079864,36.397559],[51.524394,39.835153],[51.457073,40.62431],[51.693648,39.182158],[51.70901,43.61782]]
+locations.each { |location| Location.create(latitude: location.first, longitude: location.second) }
