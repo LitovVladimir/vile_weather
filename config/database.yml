@@ -15,7 +15,6 @@ production:
   pool: 20
   database: vile_weather_production
   username: vile_weather
-  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 staging:
   <<: *default
