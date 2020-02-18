@@ -1,3 +1,5 @@
+require 'faraday'
+
 module YandexWeather
   class Client
     attr_reader :location
@@ -6,42 +8,32 @@ module YandexWeather
       @location = location
     end
 
-    def get_weather_location
-      log do
-        headers = { 'X-ACCESS-TOKEN' => ENV['YANDEX_WEATHER_TOKEN'] }
-        params = {  lat: @location.latitude,
-                    lon: @location.longitude,
-                    lang: 'en_US', limit: 4,
-                    hours: true, extra: true }
-        response = Request.get(connection, headers, params)
-        Response.new(response)
-      end
+    def get_weather
+      response = Faraday.get(url, params, headers)
+      Response.new(response)
     end
 
     private
 
-    def log
-      method_name = caller[0][/`.*'/][1..-2]
-      logger.push_tags("#{method_name} location_id: #{@location&.id}")
-      response = yield
-      logger.clear_tags!
-      response
-    rescue Faraday::ClientError => e
-      logger.fatal(e.message)
-      logger.clear_tags!
-      OpenStruct.new(conflict?: false, body: e.message)
+    def url
+      ENV['YANDEX_WEATHER_URL']
     end
 
-    def logger
-      @logger ||= begin
-        log = Logger.new(Rails.env.development? ? STDOUT : 'log/yandex_weather.log')
-        log.formatter = Logger::Formatter.new
-        ActiveSupport::TaggedLogging.new(log)
-      end
+    def params
+      {
+          lat: @location.latitude,
+          lon: @location.longitude,
+          lang: 'en_US',
+          limit: 4,
+          hours: true,
+          extra: true
+      }
     end
 
-    def connection
-      @connection ||= Connection.new(ENV['YANDEX_WEATHER_URL'], logger).build
+    def headers
+      {
+          'X-Yandex-API-Key' => ENV['YANDEX_WEATHER_TOKEN']
+      }
     end
   end
 end

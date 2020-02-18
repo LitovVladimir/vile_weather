@@ -15,4 +15,4 @@ div
         td
           = location.longitude
         td
-          = link_to 'Download', '', class: 'btn btn-info'
+          = link_to 'Download', location_download_weather_path(location_id: location.id), class: 'btn btn-info'

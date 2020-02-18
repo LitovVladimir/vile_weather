@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Domain logic support
 gem 'active_interaction', '~> 3.7'
+gem 'faraday'
+gem 'faraday_middleware'
 
 # Environment settings management
 gem 'figaro'
