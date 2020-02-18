@@ -66,6 +66,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
+  gem 'capistrano-figaro-yml'
   gem 'capistrano3-puma', require: false
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
