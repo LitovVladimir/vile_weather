@@ -14,9 +14,7 @@ production:
   <<: *default
   pool: 20
   database: vile_weather_production
-  username: vile_weather
 
 staging:
   <<: *default
   database: vile_weather
-  username: vile_weather
