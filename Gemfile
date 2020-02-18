@@ -28,12 +28,15 @@ gem 'will_paginate-bootstrap4'
 
 # Servers
 gem 'puma', '~> 3.11'
+gem 'puma_worker_killer'
 
 # Build JSON APIs
 gem 'jbuilder', '~> 2.5'
 
 # Domain logic support
 gem 'active_interaction', '~> 3.7'
+gem 'listen'
+gem 'rspec-rails'
 gem 'faraday'
 gem 'faraday_middleware'
 
@@ -58,13 +61,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
   gem 'capistrano', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
   gem 'capistrano3-puma', require: false
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
