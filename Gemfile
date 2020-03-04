@@ -27,7 +27,7 @@ gem 'slim'
 gem 'will_paginate-bootstrap4'
 
 # Servers
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'puma_worker_killer'
 
 # Build JSON APIs
